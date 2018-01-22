@@ -1,0 +1,9 @@
+<div class="menu">
+  <span class="search">
+    <input type="text" name="search" />
+    <input type="submit" class="button" value="Search" />
+  </span>
+  <span [ngClass]="link.class ? link.class : 'alt'" *ngFor="let link of menuModel.menuLinks">
+    <a [routerLink]="link.path">{{link.label}}</a>
+  </span>
+</div>

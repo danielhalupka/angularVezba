@@ -1,0 +1,6 @@
+<div class="main_nav">
+    <div class="sub_menu">
+        <div (click)="menuModel.removeLink()">Menu</div>
+        <a *ngFor="let link of menuModel.menuLinks" [routerLink]="link.path">{{link.label}}</a>
+    </div>
+</div>
