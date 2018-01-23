@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { PostsService } from "./posts.service";
-import * as q from 'q';
 
 @Injectable()
 export class PostsModel {
@@ -24,5 +23,9 @@ export class PostsModel {
     this.postsService.getPost(id).subscribe(post=>{
       callback(post);
     });
+  }
+
+  addPost(post){
+    this.posts.push({...post,id:this.posts.length+100});
   }
 }

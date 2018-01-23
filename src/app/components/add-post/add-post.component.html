@@ -1,0 +1,13 @@
+<div class="add-post-container">
+  <form (submit)="addPostToPostsModel()">
+    <label for="title">Post title:</label>
+    <input [(ngModel)]="title" name="title" placeholder="Title" />
+    <label for="body">Post body:</label>
+    <textarea [(ngModel)]="body" name="body">Body</textarea>
+    <select name="user" [(ngModel)]="userId">
+      <option value="">Select user</option>
+      <option *ngFor="let user of usersModel.users" [ngValue]="user.id">{{user.name}}</option>
+    </select>
+    <button type="submit">Add</button>
+  </form>
+</div>

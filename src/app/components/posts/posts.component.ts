@@ -1,23 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { PostsModel } from '../../services/posts.model';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { PostsModel } from "../../services/posts.model";
+import { Router } from "@angular/router";
+import { UsersModel } from "../../services/users.model";
 
 @Component({
-  selector: 'posts',
-  templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.css']
+  selector: "posts",
+  templateUrl: "./posts.component.html",
+  styleUrls: ["./posts.component.css"]
 })
 export class PostsComponent implements OnInit {
+  constructor(
+    private postsModel: PostsModel,
+    private router: Router,
+    private usersModel: UsersModel
+  ) {}
 
-  constructor(private postsModel:PostsModel,private router:Router) { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  goToPost(id) {
+    this.router.navigate(["/posts", id]);
   }
 
-  goToPost(id){
-    this.router.navigate(['/posts',id]);
-  }
-
-
-
+  
 }

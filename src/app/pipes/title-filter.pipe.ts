@@ -12,6 +12,9 @@ export class TitleFilterPipe implements PipeTransform {
         result.push(values[i]);
       }
     }
+    if(!queryString){
+      return values;
+    }
     return result;
   }
 

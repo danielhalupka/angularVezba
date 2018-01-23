@@ -30,6 +30,11 @@ export class MenuModel {
     {
       label: "Links",
       path: "links"
+    },
+    {
+      label: "Add post",
+      path: "addpost",
+      class: "home"
     }
   ];
 

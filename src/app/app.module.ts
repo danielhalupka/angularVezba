@@ -13,14 +13,17 @@ import { AboutComponent } from "./components/about/about.component";
 import { NewsComponent } from "./components/news/news.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { LinksComponent } from "./components/links/links.component";
-import { PostsComponent } from './components/posts/posts.component';
+import { PostsComponent } from "./components/posts/posts.component";
 
 import { PostsService } from "./services/posts.service";
 import { PostsModel } from "./services/posts.model";
+import { UsersService } from "./services/users.service";
+import { UsersModel } from "./services/users.model";
 import { MenuModel } from "./services/menu.model";
-import { SinglePostComponent } from './components/single-post/single-post.component';
-import { ReverseStr } from './pipes/reverse-str.pipe';
-import { TitleFilterPipe } from './pipes/title-filter.pipe';
+import { SinglePostComponent } from "./components/single-post/single-post.component";
+import { ReverseStr } from "./pipes/reverse-str.pipe";
+import { TitleFilterPipe } from "./pipes/title-filter.pipe";
+import { AddPostComponent } from './components/add-post/add-post.component';
 
 let appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -28,8 +31,9 @@ let appRoutes: Routes = [
   { path: "news", component: NewsComponent },
   { path: "contact", component: ContactComponent },
   { path: "links", component: LinksComponent },
-  { path: "posts", component: PostsComponent},
-  { path: "posts/:id", component: SinglePostComponent}
+  { path: "posts", component: PostsComponent },
+  { path: "posts/:id", component: SinglePostComponent },
+  { path: "addpost", component: AddPostComponent}
 ];
 @NgModule({
   declarations: [
@@ -45,7 +49,8 @@ let appRoutes: Routes = [
     PostsComponent,
     SinglePostComponent,
     ReverseStr,
-    TitleFilterPipe
+    TitleFilterPipe,
+    AddPostComponent
   ],
   imports: [
     HttpModule,
@@ -53,7 +58,7 @@ let appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [MenuModel, PostsModel, PostsService],
+  providers: [MenuModel, PostsModel, PostsService, UsersService, UsersModel],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
