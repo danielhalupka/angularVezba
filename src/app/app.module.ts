@@ -13,17 +13,23 @@ import { AboutComponent } from "./components/about/about.component";
 import { NewsComponent } from "./components/news/news.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { LinksComponent } from "./components/links/links.component";
+import { PostsComponent } from './components/posts/posts.component';
 
 import { PostsService } from "./services/posts.service";
 import { PostsModel } from "./services/posts.model";
 import { MenuModel } from "./services/menu.model";
+import { SinglePostComponent } from './components/single-post/single-post.component';
+import { ReverseStr } from './pipes/reverse-str.pipe';
+import { TitleFilterPipe } from './pipes/title-filter.pipe';
 
 let appRoutes: Routes = [
   { path: "", component: HomeComponent },
   { path: "aboutus", component: AboutComponent },
   { path: "news", component: NewsComponent },
   { path: "contact", component: ContactComponent },
-  { path: "links", component: LinksComponent }
+  { path: "links", component: LinksComponent },
+  { path: "posts", component: PostsComponent},
+  { path: "posts/:id", component: SinglePostComponent}
 ];
 @NgModule({
   declarations: [
@@ -35,7 +41,11 @@ let appRoutes: Routes = [
     AboutComponent,
     NewsComponent,
     ContactComponent,
-    LinksComponent
+    LinksComponent,
+    PostsComponent,
+    SinglePostComponent,
+    ReverseStr,
+    TitleFilterPipe
   ],
   imports: [
     HttpModule,

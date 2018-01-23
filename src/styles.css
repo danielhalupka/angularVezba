@@ -20,6 +20,13 @@ h1 {
 
 }
 
+h1.single-post-title {
+    
+    font-size: 2em; 
+    color: rgb(0, 67, 116);
+    text-align: center;
+}
+
 div.container {
 
     width: 750px;

@@ -8,7 +8,10 @@ export class MenuModel {
       path: "",
       class:"home"
     },
-
+    {
+      label: "Posts",
+      path: "posts"
+    },
     {
       label: "About Us",
       path: "aboutus"
