@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 import { HttpModule } from "@angular/http";
-
+ 
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./components/home/home.component";
 import { MenuComponent } from "./components/menu/menu.component";
@@ -25,6 +25,10 @@ import { ReverseStr } from "./pipes/reverse-str.pipe";
 import { TitleFilterPipe } from "./pipes/title-filter.pipe";
 import { AddPostComponent } from './components/add-post/add-post.component';
 
+import { PhotoModel } from './services/photo.model';
+import { PhotoService } from './services/photo.service';
+import { PhotogalleryComponent } from './components/photogallery/photogallery.component';
+
 let appRoutes: Routes = [
   { path: "", component: HomeComponent },
   { path: "aboutus", component: AboutComponent },
@@ -33,7 +37,8 @@ let appRoutes: Routes = [
   { path: "links", component: LinksComponent },
   { path: "posts", component: PostsComponent },
   { path: "posts/:id", component: SinglePostComponent },
-  { path: "addpost", component: AddPostComponent}
+  { path: "addpost", component: AddPostComponent},
+  { path: "gallery", component: PhotogalleryComponent}
 ];
 @NgModule({
   declarations: [
@@ -50,7 +55,8 @@ let appRoutes: Routes = [
     SinglePostComponent,
     ReverseStr,
     TitleFilterPipe,
-    AddPostComponent
+    AddPostComponent,
+    PhotogalleryComponent
   ],
   imports: [
     HttpModule,
@@ -58,7 +64,7 @@ let appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [MenuModel, PostsModel, PostsService, UsersService, UsersModel],
+  providers: [PhotoService,PhotoModel,MenuModel, PostsModel, PostsService, UsersService, UsersModel],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

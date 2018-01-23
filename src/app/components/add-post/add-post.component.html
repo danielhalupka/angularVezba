@@ -6,7 +6,8 @@
     <textarea [(ngModel)]="body" name="body">Body</textarea>
     <select name="user" [(ngModel)]="userId">
       <option value="">Select user</option>
-      <option *ngFor="let user of usersModel.users" [ngValue]="user.id">{{user.name}}</option>
+      <option *ngFor="let user of usersModel.users" 
+      [ngValue]="user.id">{{user.name}}</option>
     </select>
     <button type="submit">Add</button>
   </form>

@@ -1,0 +1,9 @@
+<input type="checkbox" [id]="'pic-'+i" *ngFor="let photo of photosModel.photos;let i = index" />
+<label [for]="'pic-'+i" class="lightbox"  *ngFor="let photo of photosModel.photos;let i = index">
+  <img [src]="photo.thumbnailUrl" />
+</label>
+<div class="grid">
+  <label [for]="'pic-'+i" class="grid-item" *ngFor="let photo of photosModel.photos;let i = index">
+    <img [src]="photo.thumbnailUrl" />
+  </label>
+</div>

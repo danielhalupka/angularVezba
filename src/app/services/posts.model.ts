@@ -28,4 +28,5 @@ export class PostsModel {
   addPost(post){
     this.posts.push({...post,id:this.posts.length+100});
   }
+
 }

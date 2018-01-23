@@ -19,6 +19,7 @@ export class PostsComponent implements OnInit {
 
   goToPost(id) {
     this.router.navigate(["/posts", id]);
+
   }
 
   
