@@ -1,10 +1,10 @@
 <input [(ngModel)]="searchString" placeholder="Search.." />
 <div *ngFor="let post of postsModel.posts | titleFilter:searchString">
     <h1 (click)="goToPost(post.id)">{{post.title}}</h1>
+    <i class="fa fa-close" (click)="deletePost(post.id)"></i>
     <p>
         {{post.body}}</p>
     <div class="post_info">June 26, 2006 | Posted by
-        <a href="#">{{usersModel.getUserById(post.userId).name}}</a> |
         <a href="#">No comments</a>
     </div>
 </div>

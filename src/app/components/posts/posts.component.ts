@@ -22,5 +22,8 @@ export class PostsComponent implements OnInit {
 
   }
 
+  deletePost(id){
+    this.postsModel.deletePost(id);
+  }
   
 }
